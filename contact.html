@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>お問い合わせ｜ぴよデザイン制作</title>
+  <meta name="description" content="ぴよデザイン制作へのご相談・お見積りのお問い合わせフォームです。">
+
+  <!-- フォント（Google Fonts） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- 見た目のファイル（LPと共通のもの＋フォーム用） -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="form.css">
+</head>
+<body class="form-page">
+
+  <!-- ===== ヘッダー（LPと同じ） ===== -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <svg class="logo-icon" viewBox="0 0 64 64" aria-hidden="true">
+          <ellipse cx="32" cy="38" rx="22" ry="20" fill="#F6D776"/>
+          <circle cx="32" cy="22" r="14" fill="#F6D776"/>
+          <circle cx="27" cy="20" r="2.2" fill="#5B4A3F"/>
+          <circle cx="37" cy="20" r="2.2" fill="#5B4A3F"/>
+          <path d="M29 26 L35 26 L32 30 Z" fill="#E9A15B"/>
+        </svg>
+        <span class="logo-text">ぴよデザイン制作</span>
+      </a>
+      <nav class="nav" aria-label="メニュー">
+        <ul class="nav-list">
+          <li><a href="index.html#service">サービス</a></li>
+          <li><a href="index.html#price">料金</a></li>
+          <li><a href="index.html#flow">流れ</a></li>
+          <li><a href="index.html#faq">質問</a></li>
+        </ul>
+      </nav>
+      <a href="#form" class="btn btn-small">お問い合わせ</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="section form-section" id="form">
+      <div class="container container-narrow">
+
+        <h1 class="section-title">
+          <span class="section-title-en">Contact</span>
+          お問い合わせ
+        </h1>
+
+        <p class="section-lead form-lead">
+          ご相談・お見積りは無料です。<br>
+          下のフォームに必要なことをご入力ください。
+        </p>
+
+        <form class="form-box" id="contact-form" action="https://formspree.io/f/mwlovwyv" method="POST" novalidate>
+
+          <!-- 受け取るメールの件名 -->
+          <input type="hidden" name="_subject" value="【ぴよデザイン制作】無料相談のお問い合わせ">
+
+          <div class="form-field">
+            <label for="name">お名前<span class="required">必須</span></label>
+            <input type="text" id="name" name="name" autocomplete="name"
+                   placeholder="例）山田 花子" required>
+            <p class="form-error" id="name-error"></p>
+          </div>
+
+          <div class="form-field">
+            <label for="email">メールアドレス<span class="required">必須</span></label>
+            <input type="email" id="email" name="email" autocomplete="email"
+                   placeholder="例）example@mail.com" required>
+            <p class="form-error" id="email-error"></p>
+          </div>
+
+          <div class="form-field">
+            <label for="message">相談したい内容<span class="required">必須</span></label>
+            <textarea id="message" name="message" rows="8"
+                      placeholder="作りたいページのイメージや、気になっていることをご自由にお書きください。" required></textarea>
+            <p class="form-error" id="message-error"></p>
+          </div>
+
+          <!-- 迷惑メール対策：人には見えない「おとり」の入力欄です。入力があった送信は受け取りません -->
+          <div class="form-trap" aria-hidden="true">
+            <label for="hp-field">この欄には何も入力しないでください</label>
+            <input type="text" id="hp-field" name="_gotcha" tabindex="-1" autocomplete="off">
+          </div>
+
+          <div class="form-submit">
+            <button type="submit" class="btn btn-large">送信する</button>
+          </div>
+
+          <!-- 送信ボタンを押したあとのお知らせ -->
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+
+        <!-- メールでの相談（今までのGmailのリンク） -->
+        <div class="form-mail">
+          <p class="form-mail-title">メールで相談する場合はこちら</p>
+          <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=piyodesign.contact@gmail.com&amp;su=%E3%80%90%E3%81%B4%E3%82%88%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%E5%88%B6%E4%BD%9C%E3%80%91%E7%84%A1%E6%96%99%E7%9B%B8%E8%AB%87%E3%81%AE%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B" class="form-mail-link" target="_blank" rel="noopener">メールで相談する（Gmailが開きます）</a>
+        </div>
+
+        <p class="form-back"><a href="index.html">← トップページへ戻る</a></p>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== フッター（LPと同じ） ===== -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-logo">ぴよデザイン制作</p>
+      <p class="footer-copy"><small>&copy; ぴよデザイン制作</small></p>
+    </div>
+  </footer>
+
+  <script>
+    // =========================================================
+    // 送信の設定
+    // Formspree で発行された URL を、下の '' の中に貼り付けると送信できるようになります。
+    // 例）const FORMSPREE_URL = 'https://formspree.io/f/abcdwxyz';
+    // =========================================================
+    const FORMSPREE_URL = 'https://formspree.io/f/mwlovwyv';
+
+    const form = document.getElementById('contact-form');
+    const statusBox = document.getElementById('form-status');
+
+    // 入力チェック（空欄やメールアドレスの形を確認して、日本語で案内します）
+    const fields = [
+      { id: 'name',    empty: 'お名前を入力してください。' },
+      { id: 'email',   empty: 'メールアドレスを入力してください。',
+                       wrong: 'メールアドレスの形が正しくありません（例：example@mail.com）。' },
+      { id: 'message', empty: '相談したい内容を入力してください。' }
+    ];
+
+    function checkFields() {
+      let firstError = null;
+      fields.forEach(function (f) {
+        const input = document.getElementById(f.id);
+        const error = document.getElementById(f.id + '-error');
+        let message = '';
+        if (input.value.trim() === '') {
+          message = f.empty;
+        } else if (f.wrong && !input.checkValidity()) {
+          message = f.wrong;
+        }
+        error.textContent = message;
+        input.classList.toggle('is-error', message !== '');
+        if (message && !firstError) firstError = input;
+      });
+      if (firstError) firstError.focus();
+      return firstError === null;
+    }
+
+    // お知らせ欄に文章を出す（isWarning が true のときは注意の見た目にする）
+    function showStatus(message, isWarning) {
+      statusBox.textContent = message;
+      statusBox.className = 'form-status' + (isWarning ? ' is-warning' : '');
+    }
+
+    let sending = false; // 二重送信を防ぐための目印
+
+    form.addEventListener('submit', function (event) {
+      // ページを移動せずに、このページの中で送信する
+      event.preventDefault();
+      if (sending) return;
+
+      statusBox.textContent = '';
+      statusBox.className = 'form-status';
+
+      // 入力に足りないところがあれば、送信しない
+      if (!checkFields()) return;
+
+      // まだ受け取りの設定がされていないときは、送信しない
+      if (FORMSPREE_URL === '') {
+        showStatus('申し訳ありません。フォームの送信機能は現在準備中のため、内容は送信されていません。お手数ですが、下の「メールで相談する」からご連絡ください。', true);
+        return;
+      }
+
+      sending = true;
+      showStatus('送信しています。しばらくお待ちください…', false);
+
+      // 送る内容をまとめる
+      // おとり欄（_gotcha）は、ブラウザの自動入力で文字が入ることがあり、
+      // そのまま送ると Formspree が「迷惑メール」として黙って捨ててしまうため、送る前に取り除きます
+      const formData = new FormData(form);
+      formData.delete('_gotcha');
+
+      // Formspree へ送信する（結果を受け取って、成功したかどうかを確認します）
+      fetch(FORMSPREE_URL, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      })
+        .then(function (response) {
+          return response.json().catch(function () { return {}; }).then(function (data) {
+            if (response.ok) {
+              form.reset();
+              showStatus('送信が完了しました。お問い合わせありがとうございます。内容を確認のうえ、ご連絡いたします。', false);
+            } else {
+              // Formspree から返ってきたエラーの理由を表示する
+              let reason = '';
+              if (data.errors && data.errors.length) {
+                reason = data.errors.map(function (e) { return e.message; }).join(' / ');
+              } else if (data.error) {
+                reason = data.error;
+              }
+              showStatus('申し訳ありません。送信できませんでした。' + (reason ? '（理由：' + reason + '）' : '') + 'お手数ですが、下の「メールで相談する」からご連絡ください。', true);
+            }
+          });
+        })
+        .catch(function () {
+          showStatus('申し訳ありません。通信に失敗したため送信できませんでした。インターネットの接続を確認して、もう一度お試しください。', true);
+        })
+        .finally(function () {
+          sending = false;
+        });
+    });
+  </script>
+</body>
+</html>

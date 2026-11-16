@@ -1,0 +1,1347 @@
+/* =========================================
+   ぴよデザイン制作 LP スタイル（大人かわいい × 高級感 版）
+   以前のデザインは次のフォルダに保存しています
+   ・最初のデザイン      ../piyo-design-lp-backup-20261114/
+   ・お花とひよこ版      ../piyo-design-lp-backup-20261114-pastel/
+   ========================================= */
+
+/* 見出し用のフォント（英字：Cormorant Garamond／日本語：Shippori Mincho） */
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Shippori+Mincho:wght@500;600;700&display=swap");
+
+/* ----- 色やサイズの設定（ここを変えると全体が変わります） ----- */
+:root {
+  --color-ivory: #FAF7F1;       /* ベース：アイボリー */
+  --color-beige: #EFE6D8;       /* ベース：ベージュ */
+  --color-line: #DCD0BE;        /* 細い線 */
+  --color-charcoal: #2A2725;    /* メリハリ：チャコール */
+  --color-charcoal-hover: #46413D;
+  --color-text: #2A2725;        /* 文字 */
+  --color-text-sub: #6B6259;    /* 補足の文字 */
+  --color-pink: #EFCFCF;        /* アクセント：淡いピンク（控えめに） */
+  --color-pink-deep: #B98785;   /* 「A」の文字など */
+  --color-cream: #F4E4B0;       /* アクセント：クリームイエロー（控えめに） */
+
+  --radius-panel: 56px;         /* 大きな背景パネルの角丸 */
+  --radius: 36px;               /* カードの角丸 */
+
+  --font-body: "Zen Maru Gothic", "Hiragino Maru Gothic ProN", "Meiryo", sans-serif;
+  --font-mincho: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif;
+  --font-en: "Cormorant Garamond", "Times New Roman", serif;
+
+  /* ----- 飾りのイラスト（SVG） ----- */
+  /* お花を持ったひよこ */
+  --svg-chick-flower: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 160'><ellipse cx='80' cy='152' rx='46' ry='6' fill='%23E2D5C0'/><path d='M66 144 v9 M90 144 v9' stroke='%23EDA25F' stroke-width='4' stroke-linecap='round'/><ellipse cx='78' cy='104' rx='50' ry='44' fill='%23F8DE7E'/><circle cx='78' cy='64' r='34' fill='%23F8DE7E'/><path d='M74 31 Q77 18 85 27' stroke='%23EFC94F' stroke-width='4' fill='none' stroke-linecap='round'/><circle cx='66' cy='60' r='4' fill='%232A2725'/><circle cx='90' cy='60' r='4' fill='%232A2725'/><circle cx='67.3' cy='58.6' r='1.3' fill='%23FFFFFF'/><circle cx='91.3' cy='58.6' r='1.3' fill='%23FFFFFF'/><path d='M72 70 L84 70 L78 78 Z' fill='%23EDA25F'/><ellipse cx='55' cy='72' rx='7' ry='4.5' fill='%23F5B5BD' opacity='.8'/><ellipse cx='101' cy='72' rx='7' ry='4.5' fill='%23F5B5BD' opacity='.8'/><path d='M116 106 Q124 80 132 52' stroke='%2399AE8C' stroke-width='3' fill='none' stroke-linecap='round'/><ellipse cx='131' cy='82' rx='9' ry='4.5' transform='rotate(-40 131 82)' fill='%23B5C7A6'/><g fill='%23F2C6C9'><circle cx='132' cy='38' r='8'/><circle cx='144.4' cy='47' r='8'/><circle cx='139.6' cy='61.5' r='8'/><circle cx='124.4' cy='61.5' r='8'/><circle cx='119.6' cy='47' r='8'/></g><circle cx='132' cy='51' r='6.5' fill='%23F6DC85'/><ellipse cx='114' cy='104' rx='12' ry='18' transform='rotate(-30 114 104)' fill='%23F2CC5E'/></svg>");
+  /* ひょっこり顔を出すひよこ */
+  --svg-chick-peek: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 90 56'><circle cx='45' cy='58' r='34' fill='%23F8DE7E'/><path d='M41 25 Q44 13 51 22' stroke='%23EFC94F' stroke-width='3.5' fill='none' stroke-linecap='round'/><circle cx='35' cy='40' r='3.2' fill='%232A2725'/><circle cx='55' cy='40' r='3.2' fill='%232A2725'/><circle cx='36' cy='39' r='1' fill='%23FFFFFF'/><circle cx='56' cy='39' r='1' fill='%23FFFFFF'/><path d='M40 46 L50 46 L45 52 Z' fill='%23EDA25F'/><ellipse cx='25' cy='48' rx='5.5' ry='3.5' fill='%23F5B5BD' opacity='.8'/><ellipse cx='65' cy='48' rx='5.5' ry='3.5' fill='%23F5B5BD' opacity='.8'/><ellipse cx='15' cy='53' rx='9' ry='5' fill='%23F2CC5E'/><ellipse cx='75' cy='53' rx='9' ry='5' fill='%23F2CC5E'/></svg>");
+  /* 小さなお花（淡いピンク） */
+  --svg-flower: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'><g fill='%23EFCFCF'><circle cx='20' cy='9' r='7'/><circle cx='30.5' cy='16.6' r='7'/><circle cx='26.5' cy='29' r='7'/><circle cx='13.5' cy='29' r='7'/><circle cx='9.5' cy='16.6' r='7'/></g><circle cx='20' cy='20' r='5.5' fill='%23F4E4B0'/></svg>");
+}
+
+/* ----- 基本の設定 ----- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;    /* メニューを押したときにゆっくり移動 */
+  scroll-padding-top: 80px;   /* ヘッダーに見出しが隠れないように */
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 2;
+  letter-spacing: 0.03em;
+  color: var(--color-text);
+  background-color: var(--color-ivory);
+}
+
+h1, h2, h3, p, ul, ol {
+  margin: 0;
+}
+
+ul, ol {
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.container-narrow {
+  max-width: 800px;
+}
+
+/* 画面幅で改行を出し分ける */
+.sp-only { display: none; }
+
+/* ----- ボタン ----- */
+.btn {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--color-ivory);
+  background-color: var(--color-charcoal);
+  border: 1px solid var(--color-charcoal);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background-color 0.25s, transform 0.25s;
+}
+
+.btn:hover {
+  background-color: var(--color-charcoal-hover);
+  transform: translateY(-2px);
+}
+
+.btn-small {
+  padding: 8px 22px;
+  font-size: 13px;
+}
+
+.btn-large {
+  padding: 20px 56px;
+  font-size: 17px;
+}
+
+/* 大きいボタンの右に「→」 */
+.btn-large:not(:disabled)::after {
+  content: "→";
+  display: inline-block;
+  margin-left: 14px;
+  transition: transform 0.25s;
+}
+
+.btn-large:not(:disabled):hover::after {
+  transform: translateX(4px);
+}
+
+/* 準備中のボタン（押せない状態） */
+.btn:disabled {
+  color: var(--color-text-sub);
+  background-color: transparent;
+  border-color: var(--color-line);
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ----- ヘッダー ----- */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: rgba(250, 247, 241, 0.92);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  height: 72px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-icon {
+  width: 38px;
+  height: 38px;
+}
+
+/* ロゴのひよこを piyo-hero.png に変更（元のイラストは非表示） */
+.logo .logo-icon {
+  display: none;
+}
+
+.logo::before {
+  content: "";
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  background: url("piyo-hero.png") center / contain no-repeat;
+  mix-blend-mode: multiply;   /* 画像の白い背景をヘッダーの色になじませる */
+}
+
+.logo-text {
+  font-family: var(--font-mincho);
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.nav-list {
+  display: flex;
+  gap: 36px;
+}
+
+.nav-list a {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  transition: opacity 0.2s;
+}
+
+.nav-list a:hover {
+  opacity: 0.6;
+}
+
+/* ----- 1. メインビジュアル ----- */
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 120px 0 150px;
+  background-color: var(--color-ivory);
+}
+
+/* 左下の大きなベージュの丸 */
+.hero::before {
+  content: "";
+  position: absolute;
+  left: -200px;
+  bottom: -280px;
+  width: 560px;
+  height: 560px;
+  border-radius: 50%;
+  background-color: var(--color-beige);
+  opacity: 0.5;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 400px;
+  padding-right: 360px;       /* 右側のアーチの分をあける */
+}
+
+/* 右側のアーチ型と、ぴよちゃんの画像（piyo-hero.png） */
+.hero-inner::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 24px;
+  width: 300px;
+  height: 380px;
+  transform: translateY(-50%);
+  border-radius: 150px 150px 28px 28px;
+  background: url("piyo-hero.png") 50% 72% / 86% auto no-repeat var(--color-beige);
+  background-blend-mode: multiply;  /* 画像の白い背景をベージュになじませる */
+}
+
+/* アーチの左下に重なる、小さなクリームイエローの丸 */
+.hero-inner::after {
+  content: "";
+  position: absolute;
+  top: calc(50% + 120px);
+  right: 284px;
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background-color: var(--color-cream);
+  opacity: 0.85;
+}
+
+.hero-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 36px;
+  padding: 6px 22px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  border: 1px solid var(--color-charcoal);
+  border-radius: 999px;
+}
+
+/* ラベルの前の小さなピンクの点 */
+.hero-label::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-pink);
+}
+
+.hero-title {
+  margin-bottom: 32px;
+  font-family: var(--font-mincho);
+  font-size: clamp(32px, 4vw, 46px);
+  font-weight: 600;
+  line-height: 1.65;
+  letter-spacing: 0.06em;
+}
+
+.hero-text {
+  margin-bottom: 52px;
+  color: var(--color-text-sub);
+}
+
+/* ----- セクション共通 ----- */
+main {
+  counter-reset: section;     /* セクション番号（01, 02 …）を数える準備 */
+}
+
+.section {
+  padding: 140px 0;
+  counter-increment: section;
+}
+
+/* 角の丸い大きなパネル（ベージュ／チャコール） */
+.worries,
+.features,
+.price,
+.faq {
+  margin: 24px;
+  border-radius: var(--radius-panel);
+}
+
+.worries,
+.features,
+.faq {
+  background-color: var(--color-beige);
+}
+
+.price {
+  color: var(--color-text);
+  background-color: #F8F5EC;   /* 淡いアイボリー */
+}
+
+/* 見出し：英語を大きく、日本語を小さく */
+.section-title {
+  margin-bottom: 72px;
+  font-family: var(--font-mincho);
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-align: left;
+}
+
+.section-title-en {
+  display: block;
+  font-family: var(--font-en);
+  font-size: clamp(44px, 6vw, 76px);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.01em;
+}
+
+/* 英語の上の小さな番号（01, 02 …） */
+.section-title-en::before {
+  content: counter(section, decimal-leading-zero);
+  display: block;
+  margin-bottom: 14px;
+  font-size: 15px;
+  font-style: normal;
+  letter-spacing: 0.2em;
+  opacity: 0.6;
+}
+
+/* 英語と日本語の間の短い線 */
+.section-title-en::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 1px;
+  margin: 26px 0 18px;
+  background-color: currentColor;
+}
+
+.section-lead {
+  margin: -40px 0 56px;
+  color: var(--color-text-sub);
+}
+
+/* ----- カード共通 ----- */
+.card-grid {
+  display: grid;
+  gap: 32px;
+}
+
+.card-grid-2 { grid-template-columns: repeat(2, 1fr); }
+.card-grid-3 { grid-template-columns: repeat(3, 1fr); }
+.card-grid-4 { grid-template-columns: repeat(2, 1fr); }
+
+.card {
+  padding: 48px 40px;
+  background-color: var(--color-ivory);
+  border-radius: var(--radius);
+}
+
+.card-title {
+  margin-bottom: 16px;
+  font-family: var(--font-mincho);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.6;
+  letter-spacing: 0.06em;
+}
+
+.card-text {
+  color: var(--color-text-sub);
+}
+
+.card-sub {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 28px 0 12px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.card-sub::before {
+  content: "";
+  width: 20px;
+  height: 1px;
+  background-color: var(--color-charcoal);
+}
+
+/* チェックマーク付きのリスト */
+.check-list li {
+  position: relative;
+  padding-left: 32px;
+  margin-bottom: 8px;
+}
+
+.check-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 20px;
+  height: 20px;
+  font-size: 11px;
+  line-height: 20px;
+  text-align: center;
+  font-weight: 700;
+  color: var(--color-charcoal);
+  background-color: var(--color-cream);
+  border-radius: 50%;
+}
+
+/* ----- 2. お悩み（左に見出し、右にリスト） ----- */
+.worries .container {
+  display: grid;
+  grid-template-columns: 0.9fr 1.3fr;
+  column-gap: 64px;
+  align-items: start;
+}
+
+.worries .section-title {
+  grid-row: 1 / span 2;
+  margin-bottom: 0;
+}
+
+.worries-list {
+  margin-bottom: 44px;
+  padding: 16px 44px;
+  background-color: var(--color-ivory);
+  border-radius: var(--radius);
+}
+
+.worries-list li {
+  position: relative;
+  padding: 20px 0 20px 28px;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.worries-list li:last-child {
+  border-bottom: none;
+}
+
+/* 小さなピンクの点 */
+.worries-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 33px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: var(--color-pink);
+}
+
+.worries-answer {
+  font-family: var(--font-mincho);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.7;
+  letter-spacing: 0.06em;
+}
+
+.worries-answer strong {
+  background: linear-gradient(transparent 68%, var(--color-cream) 68%);
+}
+
+/* ----- 3. サービス紹介（カードを上下にずらす） ----- */
+.service .card-grid {
+  align-items: start;
+}
+
+.service .card {
+  padding: 56px 48px;
+  background-color: var(--color-beige);
+}
+
+.service .card:nth-child(2) {
+  margin-top: 96px;
+}
+
+/* 見出しの右側に、ぴよちゃんの画像（piyo-service.png） */
+.service .container {
+  position: relative;
+}
+
+.service .container::before {
+  content: "";
+  position: absolute;
+  top: -40px;
+  right: 24px;
+  width: 280px;
+  height: 295px;
+  background: url("piyo-service.png") center / contain no-repeat;
+}
+
+.service .section-lead {
+  max-width: calc(100% - 320px);   /* 画像と文章が重ならないように */
+}
+
+/* ----- 4. 特徴（大きな番号＋文章） ----- */
+.feature {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 32px;
+  align-items: start;
+}
+
+.feature-num {
+  grid-row: 1 / span 2;
+  font-family: var(--font-en);
+  font-size: 64px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.feature .card-title {
+  margin-top: 4px;
+  font-size: 21px;
+}
+
+/* ----- 5. 料金（チャコールの背景） ----- */
+.price-card {
+  position: relative;
+  padding: 52px 36px 44px;
+  color: var(--color-text);
+  background-color: #FFFFFF;              /* 背景と区別するため白に */
+  border: 1px solid var(--color-line);    /* 細いベージュの線 */
+}
+
+/* カード左上の小さな丸（ピンク／クリーム／ベージュ） */
+.price-card::before {
+  content: "";
+  display: block;
+  width: 12px;
+  height: 12px;
+  margin-bottom: 24px;
+  border-radius: 50%;
+  background-color: var(--color-pink);
+}
+
+.price-card:nth-child(2)::before { background-color: var(--color-cream); }
+.price-card:nth-child(3)::before { background-color: #D9C8AE; }
+
+.price-name {
+  min-height: 3.2em;           /* 名前の行数が違ってもそろえる */
+  margin-bottom: 20px;
+  font-family: var(--font-mincho);
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1.6;
+  letter-spacing: 0.08em;
+}
+
+.price-amount {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  font-family: var(--font-en);
+  font-size: 56px;
+  font-weight: 500;
+  line-height: 1.1;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.price-amount span {
+  margin-left: 4px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.price-note {
+  margin-top: 40px;
+  font-size: 14px;
+  color: var(--color-text-sub);
+}
+
+/* ----- 6. 制作の流れ（細い線と大きな番号） ----- */
+.flow-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 48px;
+  row-gap: 64px;
+}
+
+.flow-item {
+  padding-top: 28px;
+  border-top: 1px solid var(--color-charcoal);
+}
+
+.flow-step {
+  display: block;
+  margin-bottom: 14px;
+  font-family: var(--font-en);
+  font-size: 24px;
+  font-style: italic;
+  letter-spacing: 0.06em;
+  line-height: 1;
+}
+
+.flow-title {
+  margin-bottom: 10px;
+  font-family: var(--font-mincho);
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.flow-text {
+  font-size: 15px;
+  color: var(--color-text-sub);
+}
+
+/* ----- 7. よくある質問（細い区切り線） ----- */
+.faq-list {
+  border-top: 1px solid var(--color-charcoal);
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--color-line);
+}
+
+.faq-question {
+  position: relative;
+  padding: 30px 52px 30px 56px;
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;          /* 標準の三角マークを消す */
+}
+
+.faq-question::-webkit-details-marker {
+  display: none;
+}
+
+/* 「Q」の印 */
+.faq-question::before {
+  content: "Q";
+  position: absolute;
+  left: 4px;
+  top: 22px;
+  font-family: var(--font-en);
+  font-size: 30px;
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* 右側の「＋」「－」 */
+.faq-question::after {
+  content: "+";
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--font-en);
+  font-size: 32px;
+  font-weight: 400;
+}
+
+.faq-item[open] .faq-question::after {
+  content: "−";
+}
+
+.faq-answer {
+  position: relative;
+  padding: 0 52px 32px 56px;
+  color: var(--color-text-sub);
+}
+
+/* 「A」の印 */
+.faq-answer::before {
+  content: "A";
+  position: absolute;
+  left: 4px;
+  top: -8px;
+  font-family: var(--font-en);
+  font-size: 30px;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--color-pink-deep);
+}
+
+/* ----- 8. お問い合わせ ----- */
+/* お問い合わせは、画像と文章を並べるため少し広めに */
+.contact .container-narrow {
+  max-width: 1080px;
+}
+
+/* 左に画像、右に文章とボタン */
+.contact-box {
+  display: grid;
+  grid-template-columns: 0.9fr 1fr;
+  grid-template-rows: 1fr auto auto auto 1fr;
+  column-gap: 56px;
+  padding: 56px;
+  background-color: var(--color-beige);
+  border-radius: var(--radius-panel);
+}
+
+/* ぴよちゃんの画像（piyo-contact.png） */
+.contact-box::before {
+  content: "";
+  grid-column: 1;
+  grid-row: 1 / -1;
+  width: 100%;
+  aspect-ratio: 1312 / 1199;
+  background: url("piyo-contact.png") center / cover no-repeat;
+  border-radius: 32px;
+}
+
+.contact-box > * {
+  grid-column: 2;
+}
+
+.contact-text { grid-row: 2; }
+.contact-box .btn { grid-row: 3; justify-self: start; }
+.contact-note { grid-row: 4; }
+
+.contact-text {
+  margin-bottom: 36px;
+  font-size: 17px;
+  line-height: 2.1;
+}
+
+.contact-note {
+  margin-top: 20px;
+  font-size: 14px;
+  color: var(--color-text-sub);
+}
+
+/* ----- フッター ----- */
+.footer {
+  padding: 80px 0 48px;
+  text-align: center;
+  color: var(--color-ivory);
+  background-color: var(--color-charcoal);
+}
+
+/* 小さなお花を1輪 */
+.footer .container::before {
+  content: "";
+  display: block;
+  width: 26px;
+  height: 26px;
+  margin: 0 auto 18px;
+  background: var(--svg-flower) no-repeat center / contain;
+}
+
+.footer-logo {
+  margin-bottom: 12px;
+  font-family: var(--font-mincho);
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+}
+
+.footer-copy {
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  opacity: 0.65;
+}
+
+/* =========================================
+   タブレット（画面幅 900px 以下）
+   ========================================= */
+@media (max-width: 900px) {
+  .nav {
+    display: none;           /* メニューは隠して、問い合わせボタンだけ表示 */
+  }
+
+  /* アーチとひよこは文章の上に */
+  .hero-inner {
+    min-height: 0;
+    padding-right: 24px;
+  }
+
+  .hero-inner::before {
+    position: static;
+    width: 220px;
+    height: 270px;
+    margin-bottom: 40px;
+    transform: none;
+    border-radius: 110px 110px 24px 24px;
+  }
+
+  .hero-inner::after {
+    display: none;
+  }
+
+  /* お悩みは見出しの下にリスト */
+  .worries .container {
+    display: block;
+  }
+
+  .worries .section-title {
+    margin-bottom: 56px;
+  }
+
+  .card-grid-3,
+  .flow-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card-grid-3 .card:last-child {
+    grid-column: 1 / -1;     /* 3枚目は横いっぱいに */
+  }
+
+  .service .card:nth-child(2) {
+    margin-top: 56px;
+  }
+
+  .service .card {
+    padding: 44px 32px;
+  }
+
+  /* サービス紹介の画像は見出しの上に */
+  .service .container::before {
+    position: static;
+    display: block;
+    width: 200px;
+    height: 210px;
+    margin-bottom: 24px;
+  }
+
+  .service .section-lead {
+    max-width: none;
+  }
+
+  /* お問い合わせは画像が上、文章が下 */
+  .contact-box {
+    display: block;
+    padding: 40px 32px 56px;
+    text-align: center;
+  }
+
+  .contact-box::before {
+    display: block;
+    max-width: 440px;
+    margin: 0 auto 36px;
+  }
+}
+
+/* =========================================
+   スマートフォン（画面幅 600px 以下）
+   ========================================= */
+@media (max-width: 600px) {
+  body {
+    font-size: 15px;
+    line-height: 1.95;
+  }
+
+  .sp-only { display: inline; }
+  .pc-only { display: none; }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  .header-inner {
+    height: 60px;
+  }
+
+  .logo-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .logo::before {
+    width: 34px;
+    height: 34px;
+  }
+
+  .logo-text {
+    font-size: 15px;
+    letter-spacing: 0.06em;
+  }
+
+  .btn-small {
+    padding: 6px 14px;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+  }
+
+  .btn-large {
+    width: 100%;
+    max-width: 340px;
+    padding: 18px 20px;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .hero {
+    padding: 48px 0 96px;
+  }
+
+  .hero::before {
+    width: 340px;
+    height: 340px;
+    left: -140px;
+    bottom: -180px;
+  }
+
+  .hero-inner {
+    padding-right: 20px;
+  }
+
+  .hero-inner::before {
+    width: 170px;
+    height: 210px;
+    margin-bottom: 32px;
+    border-radius: 85px 85px 20px 20px;
+  }
+
+  .hero-label {
+    margin-bottom: 24px;
+    padding: 5px 16px;
+    font-size: 12px;
+  }
+
+  .hero-title {
+    font-size: 27px;
+    letter-spacing: 0.04em;
+  }
+
+  .hero-text {
+    margin-bottom: 40px;
+  }
+
+  .section {
+    padding: 88px 0;
+  }
+
+  .worries,
+  .features,
+  .price,
+  .faq {
+    margin: 12px;
+    border-radius: 36px;
+  }
+
+  .section-title {
+    margin-bottom: 52px;
+    font-size: 16px;
+  }
+
+  .section-title-en {
+    font-size: 44px;
+  }
+
+  .section-title-en::after {
+    margin: 20px 0 14px;
+  }
+
+  .section-lead {
+    margin: -28px 0 40px;
+  }
+
+  /* カードを縦1列に */
+  .card-grid-2,
+  .card-grid-3,
+  .card-grid-4,
+  .flow-list {
+    grid-template-columns: 1fr;
+  }
+
+  .card-grid {
+    gap: 20px;
+  }
+
+  .card-grid-3 .card:last-child {
+    grid-column: auto;
+  }
+
+  .card {
+    padding: 36px 26px;
+    border-radius: 28px;
+  }
+
+  .card-title {
+    font-size: 20px;
+  }
+
+  .service .card {
+    padding: 40px 26px;
+  }
+
+  .service .card:nth-child(2) {
+    margin-top: 0;
+  }
+
+  .service .container::before {
+    width: 160px;
+    height: 170px;
+  }
+
+  .worries-list {
+    padding: 8px 22px;
+    border-radius: 28px;
+  }
+
+  .worries-list li {
+    padding: 16px 0 16px 22px;
+  }
+
+  .worries-list li::before {
+    top: 28px;
+    width: 8px;
+    height: 8px;
+  }
+
+  .worries-answer {
+    font-size: 19px;
+  }
+
+  .feature {
+    column-gap: 20px;
+  }
+
+  .feature-num {
+    font-size: 46px;
+  }
+
+  .feature .card-title {
+    font-size: 18px;
+  }
+
+  .price-name {
+    min-height: 0;
+  }
+
+  .price-amount {
+    font-size: 48px;
+  }
+
+  .flow-list {
+    row-gap: 40px;
+  }
+
+  .faq-question {
+    padding: 24px 36px 24px 40px;
+  }
+
+  .faq-question::before,
+  .faq-answer::before {
+    left: 0;
+    font-size: 26px;
+  }
+
+  .faq-question::before {
+    top: 17px;
+  }
+
+  .faq-question::after {
+    right: 0;
+  }
+
+  .faq-answer {
+    padding: 0 8px 26px 40px;
+  }
+
+  .contact-box {
+    padding: 24px 20px 44px;
+    border-radius: 36px;
+  }
+
+  .contact-box::before {
+    margin-bottom: 28px;
+    border-radius: 24px;
+  }
+
+  .contact-text {
+    font-size: 15px;
+  }
+
+  .footer {
+    padding: 64px 0 40px;
+  }
+}
+
+/* =========================================
+   文字サイズの調整（読みやすさのため、少し大きく）
+   ※元に戻すときは、ここから下をすべて消してください
+   ========================================= */
+
+/* ----- パソコン ----- */
+body {
+  font-size: 20px;
+  line-height: 1.9;
+}
+
+/* 1. ヘッダー・トップ */
+.logo-text            { font-size: 21px; }
+.nav-list a           { font-size: 20px; }
+.btn-small            { font-size: 17px; padding: 10px 24px; }
+.btn-large            { font-size: 20px; }
+.hero-label           { font-size: 18px; padding: 8px 24px; }
+
+.hero-text {
+  font-size: 26px;
+  line-height: 1.8;
+}
+
+/* 大きくした説明文が変な位置で折り返さないよう、途中の改行は使わない */
+.hero-text .pc-only {
+  display: none;
+}
+
+/* 見出しまわり（全セクション共通） */
+.section-title        { font-size: 22px; }
+.section-title-en::before { font-size: 18px; }
+.section-lead         { font-size: 21px; }
+
+/* 2. 特徴（Features） */
+.feature {
+  padding: 48px 44px;
+}
+
+.feature .card-title  { font-size: 25px; }
+.feature .card-text   { font-size: 21px; }
+
+/* 3. サービス紹介（Service） */
+.service .card-title  { font-size: 28px; }
+.service .card-text   { font-size: 21px; }
+.card-sub             { font-size: 18px; }
+
+.check-list li {
+  margin-bottom: 12px;
+  padding-left: 38px;
+  font-size: 20px;
+}
+
+.check-list li::before {
+  top: 7px;
+  width: 24px;
+  height: 24px;
+  font-size: 13px;
+  line-height: 24px;
+}
+
+/* 4. お悩み（Worries） */
+.worries-list li {
+  padding: 22px 0 22px 32px;
+  font-size: 21px;
+}
+
+.worries-list li::before {
+  top: 37px;
+}
+
+.worries-answer       { font-size: 28px; }
+
+/* 5. 料金プラン（Price） */
+.price-name           { font-size: 24px; }
+.price-amount span    { font-size: 20px; }
+.price-card .card-text {
+  font-size: 20px;
+  line-height: 1.85;
+}
+.price-note           { font-size: 21px; }
+
+/* 6. 制作の流れ（Flow） */
+.flow-item            { padding-top: 32px; }
+.flow-step            { font-size: 28px; margin-bottom: 16px; }
+.flow-title           { font-size: 25px; }
+.flow-text            { font-size: 21px; }
+
+/* 7. よくある質問・お問い合わせ・フッター */
+.faq-question {
+  padding: 32px 56px 32px 64px;
+  font-size: 21px;
+}
+
+.faq-question::before {
+  top: 26px;
+  font-size: 34px;
+}
+
+.faq-answer {
+  padding: 0 56px 34px 64px;
+  font-size: 20px;
+}
+
+.faq-answer::before   { font-size: 34px; }
+
+.contact-text {
+  font-size: 23px;
+  line-height: 2;
+}
+
+.contact-note         { font-size: 20px; }
+.footer-logo          { font-size: 24px; }
+.footer-copy          { font-size: 18px; }
+.footer-copy small    { font-size: inherit; }   /* <small> で小さくならないように */
+
+/* ----- タブレット（画面幅 900px 以下） ----- */
+@media (max-width: 900px) {
+  /* 特徴とサービス紹介のカードは1列にして、1行を長めに */
+  .card-grid-4,
+  .service .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service .card:nth-child(2) {
+    margin-top: 0;
+  }
+}
+
+/* ----- スマートフォン（画面幅 600px 以下） ----- */
+@media (max-width: 600px) {
+  body {
+    font-size: 18px;
+    line-height: 1.85;
+  }
+
+  /* 1. ヘッダー・トップ */
+  .logo-text          { font-size: 16px; }
+  .btn-small          { font-size: 14px; padding: 6px 14px; }
+  .btn-large          { font-size: 18px; }
+  .hero-label {
+    padding: 6px 16px;
+    font-size: 15px;
+    letter-spacing: 0.06em;
+  }
+  .hero-text          { font-size: 22px; }
+
+  .section-title      { font-size: 18px; }
+  .section-title-en::before { font-size: 16px; }
+  .section-lead       { font-size: 18px; }
+
+  /* 2. 特徴：番号を見出しの上に置いて、文章の幅を広く */
+  .feature {
+    display: block;
+    padding: 36px 26px;
+  }
+
+  .feature-num        { margin-bottom: 14px; }
+  .feature .card-title { font-size: 21px; }
+  .feature .card-text { font-size: 18px; }
+
+  /* 3. サービス紹介 */
+  .service .card-title { font-size: 22px; }
+  .service .card-text { font-size: 18px; }
+  .card-sub           { font-size: 16px; }
+
+  .check-list li {
+    padding-left: 32px;
+    font-size: 18px;
+  }
+
+  .check-list li::before {
+    top: 6px;
+    width: 22px;
+    height: 22px;
+    font-size: 12px;
+    line-height: 22px;
+  }
+
+  /* 4. お悩み */
+  .worries-list li {
+    padding: 18px 0 18px 24px;
+    font-size: 18px;
+  }
+
+  .worries-list li::before {
+    top: 31px;
+  }
+
+  .worries-answer     { font-size: 21px; }
+
+  /* 5. 料金プラン */
+  .price-name         { font-size: 21px; }
+  .price-amount span  { font-size: 17px; }
+  .price-card .card-text { font-size: 18px; }
+  .price-note         { font-size: 18px; }
+
+  /* 6. 制作の流れ */
+  .flow-step          { font-size: 24px; }
+  .flow-title         { font-size: 22px; }
+  .flow-text          { font-size: 18px; }
+
+  /* 7. よくある質問・お問い合わせ・フッター */
+  .faq-question {
+    padding: 24px 36px 24px 44px;
+    font-size: 18px;
+  }
+
+  .faq-question::before {
+    top: 19px;
+    font-size: 28px;
+  }
+
+  .faq-answer {
+    padding: 0 8px 26px 44px;
+    font-size: 18px;
+  }
+
+  .faq-answer::before { font-size: 28px; }
+
+  .contact-text       { font-size: 18px; }
+  .contact-note       { font-size: 17px; }
+  .footer-logo        { font-size: 20px; }
+  .footer-copy        { font-size: 15px; }
+
+  /* 長いボタンの文字は、ボタンの中で折り返す */
+  .btn-large {
+    white-space: normal;
+    line-height: 1.6;
+  }
+
+  /* お問い合わせのボタンは、1行に収まるよう文字の間隔と余白を少しつめる */
+  .contact-box .btn-large {
+    padding: 18px 12px;
+    font-size: 16px;
+    letter-spacing: 0.02em;
+  }
+}

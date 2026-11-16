@@ -1,0 +1,264 @@
+/* =========================================
+   お問い合わせフォームページ（contact.html）専用の見た目
+   色やフォントは style.css の設定をそのまま使っています
+   ========================================= */
+
+/* ----- ページ全体 ----- */
+.form-section {
+  padding: 100px 0 120px;
+}
+
+/* このページでは、見出しの上の番号（01）は表示しない */
+.form-page .section-title-en::before {
+  content: none;
+}
+
+.form-lead {
+  margin: -32px 0 40px;
+}
+
+/* ----- 準備中のお知らせ ----- */
+.form-notice {
+  margin-bottom: 40px;
+  padding: 28px 32px;
+  color: var(--color-text);
+  background-color: var(--color-pink-light, #F8E6E4);
+  border: 1px solid var(--color-pink);
+  border-radius: 28px;
+}
+
+.form-notice p {
+  font-size: 18px;
+}
+
+.form-notice-title {
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+/* ----- フォームの箱 ----- */
+.form-box {
+  padding: 56px 56px 48px;
+  background-color: var(--color-beige);
+  border-radius: var(--radius-panel);
+}
+
+.form-field {
+  margin-bottom: 32px;
+}
+
+.form-field label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  font-family: var(--font-mincho);
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+
+/* 「必須」のしるし */
+.required {
+  display: inline-block;
+  padding: 2px 12px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: var(--color-pink);
+  border-radius: 999px;
+}
+
+/* 入力欄 */
+.form-field input,
+.form-field textarea {
+  display: block;
+  width: 100%;
+  padding: 16px 22px;
+  font-family: var(--font-body);
+  font-size: 19px;
+  line-height: 1.7;
+  color: var(--color-text);
+  background-color: var(--color-ivory);
+  border: 1px solid var(--color-line);
+  border-radius: 18px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-field textarea {
+  min-height: 220px;
+  resize: vertical;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: #A79C90;
+}
+
+/* 入力中の欄をわかりやすく */
+.form-field input:focus,
+.form-field textarea:focus {
+  outline: none;
+  border-color: var(--color-charcoal);
+  box-shadow: 0 0 0 3px rgba(42, 39, 37, 0.12);
+}
+
+/* 入力が足りない欄 */
+.form-field .is-error {
+  border-color: #C0716F;
+}
+
+.form-error {
+  margin-top: 8px;
+  font-size: 16px;
+  color: #A4524F;
+}
+
+.form-error:empty {
+  display: none;
+}
+
+/* 迷惑メール対策の「おとり」の欄は、画面に表示しない */
+.form-trap {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* 送信ボタン */
+.form-submit {
+  margin-top: 44px;
+  text-align: center;
+}
+
+.form-submit .btn-large {
+  min-width: 280px;
+}
+
+/* 送信ボタンを押したあとのお知らせ */
+.form-status:empty {
+  display: none;
+}
+
+.form-status {
+  margin-top: 28px;
+  padding: 20px 24px;
+  font-size: 18px;
+  border-radius: 20px;
+}
+
+.form-status.is-warning {
+  background-color: var(--color-ivory);
+  border: 1px solid var(--color-pink);
+}
+
+/* ----- メールで相談する ----- */
+.form-mail {
+  margin-top: 56px;
+  padding-top: 40px;
+  text-align: center;
+  border-top: 1px solid var(--color-line);
+}
+
+.form-mail-title {
+  margin-bottom: 16px;
+  font-family: var(--font-mincho);
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+
+.form-mail-link {
+  display: inline-block;
+  padding: 14px 36px;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  border: 1px solid var(--color-charcoal);
+  border-radius: 999px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.form-mail-link:hover {
+  color: var(--color-ivory);
+  background-color: var(--color-charcoal);
+}
+
+/* トップページへ戻る */
+.form-back {
+  margin-top: 48px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.form-back a {
+  border-bottom: 1px solid currentColor;
+}
+
+.form-back a:hover {
+  opacity: 0.6;
+}
+
+/* ----- スマートフォン（画面幅 600px 以下） ----- */
+@media (max-width: 600px) {
+  .form-section {
+    padding: 64px 0 88px;
+  }
+
+  .form-lead {
+    margin: -20px 0 32px;
+  }
+
+  .form-notice {
+    padding: 22px 20px;
+    border-radius: 22px;
+  }
+
+  .form-notice p {
+    font-size: 16px;
+  }
+
+  .form-box {
+    padding: 36px 20px 32px;
+    border-radius: 32px;
+  }
+
+  .form-field label {
+    font-size: 18px;
+  }
+
+  /* スマホで入力欄を押したときに画面が拡大されないよう、16px以上にしています */
+  .form-field input,
+  .form-field textarea {
+    padding: 14px 16px;
+    font-size: 17px;
+  }
+
+  .form-submit .btn-large {
+    min-width: 0;
+  }
+
+  .form-status {
+    font-size: 16px;
+  }
+
+  .form-mail-title {
+    font-size: 18px;
+  }
+
+  /* 1行に収まるよう、文字の間隔と余白を少しつめる */
+  .form-mail-link {
+    padding: 14px 16px;
+    font-size: 15px;
+    letter-spacing: 0.02em;
+  }
+
+  .form-back {
+    font-size: 16px;
+  }
+}
